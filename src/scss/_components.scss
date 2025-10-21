@@ -25,7 +25,7 @@
 }
 
 .navbar {
-  color: var(--colors-neutral-900);
+  color: var(--colors-neutral-600);
   background-color: var(--colors-base-white);
   padding: var(--spacing-075);
   display: flex;
@@ -72,6 +72,10 @@
       transition: transform 0.3s ease;
     }
 
+    &.active {
+      color: var(--colors-neutral-700);
+    }
+
     &.active::after,
     &:hover::after {
       transform: scale(1);
@@ -114,7 +118,7 @@
 }
 
 .theme-toggle {
-  background: var(--colors-neutral-100);
+  background-color: var(--colors-neutral-100);
   border: 1px solid var(--colors-neutral-200);
   border-radius: var(--corner-radius-8);
   cursor: pointer;
@@ -127,6 +131,11 @@
   & .sun {
     @include mixins.visually-hidden;
   }
+
+  & .sun,
+  & .moon {
+    display: flex;
+  }
 }
 
 @media (min-width: 48rem) {
@@ -138,5 +147,27 @@
 
   .nav-toggle {
     @include mixins.visually-hidden;
+  }
+}
+
+body.dark {
+  .navbar {
+    background-color: var(--colors-neutral-800);
+    color: var(--colors-neutral-400);
+
+    .nav__item {
+      &.active {
+        color: var(--colors-neutral-0);
+      }
+    }
+  }
+  .theme-toggle {
+    background-color: var(--colors-neutral-900);
+    & .moon {
+      @include mixins.visually-hidden;
+    }
+    & .sun {
+      @include mixins.visually-visible;
+    }
   }
 }

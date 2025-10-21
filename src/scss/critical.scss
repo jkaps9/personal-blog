@@ -174,3 +174,25 @@ footer {
 
 @media (min-width: 48rem) {
 }
+
+body.dark {
+  background-color: var(--colors-neutral-900);
+  color: var(--colors-neutral-0);
+
+  p {
+    color: var(--colors-neutral-400);
+  }
+
+  .hero {
+    .social-links__item {
+      background-color: var(--colors-neutral-900);
+    }
+  }
+
+  .social-links__item {
+    svg,
+    svg > * {
+      fill: var(--colors-neutral-0);
+    }
+  }
+}
