@@ -27,7 +27,7 @@
 .navbar {
   color: var(--colors-neutral-900);
   background-color: var(--colors-base-white);
-  padding: var(--spacing-075) 0;
+  padding: var(--spacing-075);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -126,7 +126,7 @@
   }
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 48rem) {
   .navbar {
     .main-nav {
       @include mixins.visually-visible;

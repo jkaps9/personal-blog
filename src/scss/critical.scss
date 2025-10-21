@@ -78,6 +78,9 @@
 body {
   line-height: 1.6em;
   font-family: Arial, Helvetica, sans-serif;
+
+  padding: clamp(var(--spacing-200), 0.7615rem + 1.0178vw, var(--spacing-250)) 0;
+  background-color: var(--colors-neutral-200);
 }
 
 .container {
@@ -86,6 +89,15 @@ body {
   width: var(--container-width);
 
   position: relative;
+}
+
+header {
+  .container {
+    background-color: var(--colors-neutral-0);
+    border-radius: var(--corner-radius-10);
+    border: 1px solid var(--colors-neutral-200);
+    box-shadow: 0 6px 10px 0 rgba(123, 123, 123, 0.03);
+  }
 }
 
 footer {
