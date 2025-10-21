@@ -1,3 +1,15 @@
+@mixin visually-hidden {
+  visibility: hidden;
+  height: 0;
+  position: absolute;
+}
+
+@mixin visually-visible {
+  visibility: visible;
+  height: auto;
+  position: static;
+}
+
 @mixin text-preset-1 {
   font-size: 40px;
   font-family: "DM Sans", sans-serif;
