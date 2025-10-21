@@ -1,8 +1,12 @@
 @use "fonts";
 @use "reset";
+@use "components";
+@use "mixins";
 @use "sass:map";
 
 :root {
+  --colors-base-white: #ffffff;
+
   --colors-neutral-0: #fefefe;
   --colors-neutral-100: #fbf9f7;
   --colors-neutral-200: #efedeb;
@@ -80,21 +84,6 @@ body {
   margin: 0 auto;
   max-width: var(--container-max-width);
   width: var(--container-width);
-}
-
-.btn--solid {
-  display: inline-block;
-  padding: 1em 2em;
-  text-decoration: none;
-  background-color: var(--accent-color);
-  color: var(--text-white);
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--accent-color-light);
-  }
 }
 
 header {

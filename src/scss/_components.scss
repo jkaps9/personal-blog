@@ -1,0 +1,25 @@
+@use "mixins";
+
+.btn--solid {
+  @include mixins.text-preset-6;
+  background-color: var(--colors-blue-500);
+  border-radius: var(--corner-radius-10);
+  color: var(--colors-neutral-900);
+  cursor: pointer;
+  display: inline-flex;
+  padding: var(--spacing-150) var(--spacing-300);
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--colors-blue-700);
+  }
+
+  &:focus,
+  &:active {
+    background-color: var(--colors-blue-500);
+    border-radius: var(--corner-radius-8);
+    box-shadow:
+      0 0 0 2px var(--colors-base-white),
+      0 0 0 4px var(--colors-blue-800);
+  }
+}
