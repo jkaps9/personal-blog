@@ -40,7 +40,7 @@ export default function (config) {
   config.addWatchTarget("./src/scss/");
 
   return {
-    pathPrefix: "/eleventy-template/",
+    pathPrefix: "/personal-blog/",
     markdownTemplateEngine: "njk",
     dataTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
