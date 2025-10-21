@@ -3,6 +3,61 @@
 @use "sass:map";
 
 :root {
+  --colors-neutral-0: #fefefe;
+  --colors-neutral-100: #fbf9f7;
+  --colors-neutral-200: #efedeb;
+  --colors-neutral-300: #dedcda;
+  --colors-neutral-400: #c0bfbf;
+  --colors-neutral-600: #4a4846;
+  --colors-neutral-700: #34302d;
+  --colors-neutral-800: #201e1d;
+  --colors-neutral-900: #1c1a19;
+
+  --colors-blue-200: #e1f1fe;
+  --colors-blue-500: #93cefc;
+  --colors-blue-700: #75b0de;
+  --colors-blue-800: #5792c0;
+  --colors-blue-900: #022b4a;
+
+  --colors-green-200: #e9f5ea;
+  --colors-green-500: #9dd3a9;
+  --colors-green-700: #008531;
+  --colors-green-900: #132a18;
+
+  --colors-yellow-200: #fff5e1;
+  --colors-yellow-500: #facc79;
+  --colors-yellow-700: #ea9806;
+  --colors-yellow-900: #4a3003;
+
+  --colors-red-400: #f04438;
+  --colors-red-600: #d92d20;
+
+  --spacing-0: 0px;
+  --spacing-025: 2px;
+  --spacing-050: 4px;
+  --spacing-075: 6px;
+  --spacing-100: 8px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-250: 20px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-800: 64px;
+  --spacing-1000: 80px;
+
+  --corner-radius-0: 0px;
+  --corner-radius-4: 4px;
+  --corner-radius-6: 6px;
+  --corner-radius-8: 8px;
+  --corner-radius-10: 10px;
+  --corner-radius-12: 12px;
+  --corner-radius-16: 16px;
+  --corner-radius-20: 20px;
+  --corner-radius-24: 24px;
+  --corner-radius-full: 999px;
+
   // COLORS
   --accent-color: hsl(240, 100%, 50%);
   --accent-color-light: hsl(240, 100%, 65%);
