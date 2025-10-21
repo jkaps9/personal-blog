@@ -31,6 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--spacing-250);
   z-index: 1000;
 
   .main-nav {
@@ -84,6 +85,16 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-075);
+  }
+
+  &__avatar-link {
+    margin-right: auto;
+  }
+
+  &__avatar-image {
+    border-radius: var(--corner-radius-10);
+    max-height: 2.5rem;
+    max-width: 2.5rem;
   }
 }
 
