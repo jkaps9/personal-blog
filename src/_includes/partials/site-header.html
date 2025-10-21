@@ -3,10 +3,14 @@
     <div class="navbar">
       <a
         href="{{ '/' | url }}"
-        class="logo"
+        class="navbar__avatar-link"
         aria-label="{{ site.name }} - home"
       >
-        {% include "svgs/logo.svg" %}
+        <img
+          src="{{ '/assets/images/image-avatar.jpg' | url }}"
+          alt=""
+          class="navbar__avatar-image"
+        />
       </a>
       <nav
         class="main-nav"
@@ -19,17 +23,17 @@
             </li>
           {% endfor %}
         </ul>
-        <a
-          href="#"
-          class="btn--solid"
-        >
-          Contact Us
-        </a>
       </nav>
-      <button class="nav-toggle">
-        {% include "svgs/icon-hamburger.svg" %}
-        {% include "svgs/icon-close.svg" %}
-      </button>
+      <div class="navbar__toggle-buttons">
+        <button class="nav-toggle">
+          <div class="hamburger">{% include "svgs/icon-menu.svg" %}</div>
+          <div class="close">{% include "svgs/icon-menu-close.svg" %}</div>
+        </button>
+        <button class="theme-toggle">
+          <div class="moon">{% include "svgs/icon-moon.svg" %}</div>
+          <div class="sun">{% include "svgs/icon-sun.svg" %}</div>
+        </button>
+      </div>
     </div>
   </div>
 </header>
