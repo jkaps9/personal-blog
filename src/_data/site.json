@@ -1,0 +1,17 @@
+{
+  "name": "Eleventy Template",
+  "navigation": [
+    {
+      "text": "About",
+      "url": "/about/"
+    },
+    {
+      "text": "Service",
+      "url": "/service/"
+    },
+    {
+      "text": "Projects",
+      "url": "/projects/"
+    }
+  ]
+}
