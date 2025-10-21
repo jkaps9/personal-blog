@@ -18,7 +18,7 @@
       >
         <ul class="nav__list">
           {% for item in site.navigation %}
-            <li class="nav__item">
+            <li class="nav__item {% if item.text===title %}active{% endif %}">
               <a href="{{ item.url | url }}">{{ item.text }}</a>
             </li>
           {% endfor %}
