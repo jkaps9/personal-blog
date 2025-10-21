@@ -1,3 +1,46 @@
 {% extends "layouts/base.html" %}
 {% block content %}
+  <section class="hero">
+    <div class="container hero__container">
+      <h1 class="hero__title">Hi, I'm Paulina 👋</h1>
+      <p>
+        I'm on a journey to become a front-end web developer. I love building
+        little projects, trying out new coding techniques, and sharing what I
+        learn along the way. When I'm not at my desk, you'll find me reading,
+        hiking through the mountains, or challenging myself on rock-climbing
+        walls.
+      </p>
+      <p>
+        I started this blog to document my progress, keep myself accountable,
+        and hopefully inspire anyone else who's learning to code. Welcome to my
+        corner of the internet, and thanks for stopping by!
+      </p>
+      <div class="social-links hero__social-links">
+        <a
+          href="https://twitter.com"
+          class="hero__social-links__item"
+        >
+          {% include "svgs/logo-x.svg" %}
+        </a>
+        <a
+          href="https://twitter.com"
+          class="hero__social-links__item"
+        >
+          {% include "svgs/logo-github.svg" %}
+        </a>
+        <a
+          href="https://twitter.com"
+          class="hero__social-links__item"
+        >
+          {% include "svgs/logo-linkedin.svg" %}
+        </a>
+        <a
+          href="https://twitter.com"
+          class="hero__social-links__item"
+        >
+          {% include "svgs/logo-frontend-mentor.svg" %}
+        </a>
+      </div>
+    </div>
+  </section>
 {% endblock %}
