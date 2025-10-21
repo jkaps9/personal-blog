@@ -2,16 +2,20 @@
   "name": "Personal Blog",
   "navigation": [
     {
+      "text": "Home",
+      "url": "/"
+    },
+    {
+      "text": "Blog",
+      "url": "/blog/"
+    },
+    {
       "text": "About",
       "url": "/about/"
     },
     {
-      "text": "Service",
-      "url": "/service/"
-    },
-    {
-      "text": "Projects",
-      "url": "/projects/"
+      "text": "Newsletter",
+      "url": "/newsletter/"
     }
   ]
 }
