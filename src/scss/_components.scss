@@ -138,6 +138,13 @@
   }
 }
 
+.divider {
+  &__line {
+    height: 1px;
+    background-color: var(--colors-neutral-200);
+  }
+}
+
 @media (min-width: 48rem) {
   .navbar {
     .main-nav {
