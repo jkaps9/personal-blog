@@ -163,11 +163,12 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--spacing-400);
   }
   &__title {
     @include mixins.text-preset-2;
-    margin-bottom: var(--spacing-400);
     position: relative;
+
     &::after {
       content: "";
       position: absolute;
