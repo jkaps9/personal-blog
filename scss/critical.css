@@ -422,6 +422,7 @@ header .container {
   border: 1px solid var(--colors-neutral-200);
   box-shadow: 0 6px 10px 0 rgba(123, 123, 123, 0.03);
   padding: 0;
+  overflow: hidden;
 }
 
 .hero__container {
