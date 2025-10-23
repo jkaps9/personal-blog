@@ -25,7 +25,7 @@
         {% for post in collections.latestPosts %}
           <li class="latest-posts__item">
             <a
-              href="{{ './posts/' + post.slug | url }}"
+              href="{{ './blog/' + post.slug | url }}"
               class="latest_posts__item__link"
             >
               {{ post.title }}
@@ -36,6 +36,12 @@
           </li>
         {% endfor %}
       </ul>
+      <a
+        href="{{ './blog/' | url }}"
+        class="latest_posts__blog__link"
+      >
+        View all articles
+      </a>
     </div>
   </section>
 {% endblock %}
