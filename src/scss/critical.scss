@@ -113,6 +113,11 @@ p {
 
 section {
   margin: clamp(var(--spacing-400), 1.6479rem + 1.5023vw, var(--spacing-800)) 0;
+  & > * {
+    // TODO: need this to expand full height of section
+    border-right: 1px solid var(--colors-neutral-200);
+    border-left: 1px solid var(--colors-neutral-200);
+  }
 }
 
 header {
