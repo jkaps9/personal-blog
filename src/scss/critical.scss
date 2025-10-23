@@ -185,6 +185,11 @@ header {
     flex-direction: column;
     gap: var(--spacing-300);
   }
+
+  &__blog-link {
+    @include mixins.text-preset-6;
+    color: var(--colors-neutral-700);
+  }
 }
 
 .post {
