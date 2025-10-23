@@ -63,17 +63,10 @@
   --corner-radius-24: 24px;
   --corner-radius-full: 999px;
 
-  // COLORS
-  --accent-color: hsl(240, 100%, 50%);
-  --accent-color-light: hsl(240, 100%, 65%);
-  --text-white: #fff;
-  --text-black: #000;
-
-  --bg-black: #1a1a1a;
-
   // CONTAINER
   --container-max-width: 40rem;
   --container-width: 90%;
+  --container-padding: var(--spacing-250);
 }
 
 body {
@@ -82,6 +75,15 @@ body {
 
   padding: clamp(var(--spacing-200), 0.7615rem + 1.0178vw, var(--spacing-250)) 0;
   background-color: var(--colors-neutral-100);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--colors-neutral-700);
 }
 
 p {
@@ -93,6 +95,7 @@ p {
   margin: 0 auto;
   max-width: var(--container-max-width);
   width: var(--container-width);
+  padding: 0 var(--container-padding);
 
   position: relative;
 }
@@ -118,6 +121,7 @@ header {
     border-radius: var(--corner-radius-10);
     border: 1px solid var(--colors-neutral-200);
     box-shadow: 0 6px 10px 0 rgba(123, 123, 123, 0.03);
+    padding: 0;
   }
 }
 
@@ -127,8 +131,6 @@ header {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-300);
-
-    padding: 0 var(--spacing-125);
   }
 
   &__title {
@@ -153,6 +155,44 @@ header {
     background-color: var(--colors-neutral-0);
     border-radius: var(--corner-radius-10);
     border: 1px solid var(--colors-neutral-200);
+  }
+}
+
+.latest-posts {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__title {
+    @include mixins.text-preset-2;
+    margin-bottom: var(--spacing-400);
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: calc(0.3em - 2px);
+      right: calc(-1 * (var(--spacing-125) + 40px));
+      height: 3px;
+      width: 40px;
+      background-color: var(--colors-blue-500);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+  }
+}
+
+.post {
+  &__title {
+    @include mixins.text-preset-5;
+  }
+
+  &__date {
+    @include mixins.text-preset-8-italic;
   }
 }
 

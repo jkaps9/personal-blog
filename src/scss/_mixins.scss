@@ -67,21 +67,22 @@
   line-height: 1.5;
 }
 @mixin text-preset-8 {
-  font-size: 16px;
+  font-size: 1rem;
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
   letter-spacing: -0.2px;
   line-height: 1.5;
 }
 @mixin text-preset-8-italic {
-  font-size: 16px;
+  font-size: 1rem;
+  font-style: italic;
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
   letter-spacing: -0.2px;
   line-height: 1.5;
 }
 @mixin text-preset-9 {
-  font-size: 16px;
+  font-size: 1rem;
   font-family: "Fira Code", sans-serif;
   font-weight: 400;
   letter-spacing: -0.4px;
