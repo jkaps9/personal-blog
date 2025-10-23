@@ -26,13 +26,11 @@
           <li class="latest-posts__item">
             <a
               href="{{ './blog/' + post.slug | url }}"
-              class="latest_posts__item__link"
+              class="post__title"
             >
               {{ post.title }}
             </a>
-            <p class="latest_posts__item__date">
-              {{ post.publishedAt | readableDate }}
-            </p>
+            <p class="post__date">{{ post.publishedAt | readableDate }}</p>
           </li>
         {% endfor %}
       </ul>
