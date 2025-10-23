@@ -2,6 +2,13 @@ import path from "node:path";
 import * as sass from "sass";
 import { DateTime } from "luxon";
 import posts from "./src/_data/posts.json" with { type: "json" };
+import markdownIt from "markdown-it";
+
+const md = markdownIt({
+  html: true,
+  breaks: true,
+  linkify: true,
+});
 
 export default function (config) {
   // add SCSS template format
@@ -47,6 +54,11 @@ export default function (config) {
     return DateTime.fromISO(dateObj, { zone: "utc" }).toLocaleString(
       DateTime.DATE_FULL,
     );
+  });
+
+  // add markdown filter
+  config.addFilter("markdown", function (content) {
+    return md.render(content);
   });
 
   // create a posts collection

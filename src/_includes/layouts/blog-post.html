@@ -1,4 +1,10 @@
 {% extends "layouts/base.html" %}
 {% block content %}
-  <h1>{{ post.title }}</h1>
+  <section class="blog-post">
+    <div class="container">
+      <h1 class="post__title">{{ post.title }}</h1>
+      <p class="post__date">Published {{ post.publishedAt | readableDate }}</p>
+      <div class="post__content">{{ post.content | markdown | safe }}</div>
+    </div>
+  </section>
 {% endblock %}
