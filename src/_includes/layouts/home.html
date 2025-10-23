@@ -22,7 +22,7 @@
     <div class="container">
       <h2 class="latest-posts__title">Latest Articles</h2>
       <ul class="latest-posts__list">
-        {% for post in posts %}
+        {% for post in collections.latestPosts %}
           <li class="latest-posts__item">
             <a
               href="{{ './posts/' + post.slug | url }}"

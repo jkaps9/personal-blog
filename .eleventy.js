@@ -1,15 +1,9 @@
 import path from "node:path";
 import * as sass from "sass";
 import { DateTime } from "luxon";
+import posts from "./src/_data/posts.json" with { type: "json" };
 
 export default function (config) {
-  // add date filter
-  config.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromISO(dateObj, { zone: "utc" }).toLocaleString(
-      DateTime.DATE_FULL,
-    );
-  });
-
   // add SCSS template format
   config.addTemplateFormats("scss");
 
@@ -47,6 +41,27 @@ export default function (config) {
   });
 
   config.addWatchTarget("./src/scss/");
+
+  // add date filter
+  config.addFilter("readableDate", (dateObj) => {
+    return DateTime.fromISO(dateObj, { zone: "utc" }).toLocaleString(
+      DateTime.DATE_FULL,
+    );
+  });
+
+  // create a posts collection
+
+  config.addCollection("allPosts", function (collectionApi) {
+    return posts.sort((a, b) => {
+      return DateTime.fromISO(b.date) - DateTime.fromISO(a.date);
+    });
+  });
+
+  config.addCollection("latestPosts", function (collectionApi) {
+    return posts
+      .sort((a, b) => DateTime.fromISO(b.date) - DateTime.fromISO(a.date))
+      .slice(0, 5);
+  });
 
   return {
     pathPrefix: "/personal-blog/",
