@@ -113,7 +113,7 @@ p {
 
 section {
   margin: clamp(var(--spacing-400), 1.6479rem + 1.5023vw, var(--spacing-800)) 0;
-  & > * {
+  & > .container {
     // TODO: need this to expand full height of section
     border-right: 1px solid var(--colors-neutral-200);
     border-left: 1px solid var(--colors-neutral-200);
@@ -266,20 +266,88 @@ body.dark {
   background-color: var(--colors-neutral-900);
   color: var(--colors-neutral-0);
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--colors-neutral-0);
+  }
+
   p {
     color: var(--colors-neutral-400);
   }
 
   .hero {
     .social-links__item {
-      background-color: var(--colors-neutral-900);
+      background-color: var(--colors-neutral-800);
+      border-color: var(--colors-neutral-700);
+
+      svg,
+      svg > * {
+        fill: var(--colors-neutral-0);
+      }
+
+      &:hover {
+        background-color: var(--colors-neutral-700);
+        border-color: var(--colors-neutral-600);
+      }
     }
   }
 
-  .social-links__item {
-    svg,
-    svg > * {
-      fill: var(--colors-neutral-0);
+  section > .container {
+    border-color: var(--colors-neutral-700);
+  }
+
+  .divider {
+    &__line {
+      background-color: var(--colors-neutral-700);
+    }
+  }
+
+  header {
+    .container {
+      border-color: var(--colors-neutral-700);
+    }
+    .navbar {
+      background-color: var(--colors-neutral-800);
+      color: var(--colors-neutral-400);
+
+      .nav__item {
+        &.active {
+          color: var(--colors-neutral-0);
+        }
+      }
+    }
+  }
+
+  .theme-toggle {
+    background-color: var(--colors-neutral-900);
+    border-color: var(--colors-neutral-700);
+    & .moon {
+      @include mixins.visually-hidden;
+    }
+    & .sun {
+      @include mixins.visually-visible;
+    }
+  }
+
+  .latest-posts {
+    &__blog-link {
+      color: var(--colors-neutral-0);
+    }
+  }
+
+  footer {
+    .content {
+      border-color: var(--colors-neutral-700);
+    }
+    .social-links__item {
+      svg,
+      svg > * {
+        fill: var(--colors-neutral-400);
+      }
     }
   }
 }

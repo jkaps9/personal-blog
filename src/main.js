@@ -7,3 +7,13 @@ if (navToggle && mainNav) {
     mainNav.classList.toggle("visible");
   });
 }
+
+// Theme Toggle
+const themeToggle = document.querySelector(".theme-toggle");
+const body = document.querySelector("body");
+
+if (themeToggle && body) {
+  themeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+  });
+}

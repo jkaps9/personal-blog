@@ -161,25 +161,3 @@
     @include mixins.visually-hidden;
   }
 }
-
-body.dark {
-  .navbar {
-    background-color: var(--colors-neutral-800);
-    color: var(--colors-neutral-400);
-
-    .nav__item {
-      &.active {
-        color: var(--colors-neutral-0);
-      }
-    }
-  }
-  .theme-toggle {
-    background-color: var(--colors-neutral-900);
-    & .moon {
-      @include mixins.visually-hidden;
-    }
-    & .sun {
-      @include mixins.visually-visible;
-    }
-  }
-}
