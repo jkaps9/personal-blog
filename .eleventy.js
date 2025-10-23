@@ -9,6 +9,7 @@ export default function (config) {
 
   // Set directories to pass through to the dist folder
   config.addPassthroughCopy("./src/assets");
+  //config.addPassthroughCopy("./src/admin"); // Needed for DecapCMS
 
   // Configure SCSS files
   config.addExtension("scss", {

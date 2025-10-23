@@ -18,4 +18,16 @@
       {% include "partials/social-links.html" %}
     </div>
   </section>
+  <section class="latest-posts">
+    <div class="container">
+      <h2 class="latest-posts__title">Latest Articles</h2>
+      <ul class="latest-posts__list">
+        {% for post in posts %}
+          <li class="latest-posts__item">
+            <a href="{{ './posts/' + post.slug | url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
 {% endblock %}
