@@ -161,6 +161,11 @@ header {
     background-color: var(--colors-neutral-0);
     border-radius: var(--corner-radius-10);
     border: 1px solid var(--colors-neutral-200);
+
+    &:hover {
+      background-color: var(--colors-neutral-200);
+      border-color: var(--colors-neutral-300);
+    }
   }
 }
 
@@ -211,11 +216,19 @@ header {
       height: 3px;
       background: var(--colors-blue-500);
     }
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   .post {
     &__title {
       @include mixins.text-preset-5;
+      &:hover {
+        text-decoration: underline;
+        opacity: 0.7;
+      }
     }
 
     &__date {
@@ -237,6 +250,12 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding-top: var(--spacing-200);
+  }
+
+  .social-links__item {
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 

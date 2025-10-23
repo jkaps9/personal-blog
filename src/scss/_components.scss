@@ -136,6 +136,11 @@
   & .moon {
     display: flex;
   }
+
+  &:hover {
+    background-color: var(--colors-neutral-200);
+    border-color: var(--colors-neutral-300);
+  }
 }
 
 .divider {
