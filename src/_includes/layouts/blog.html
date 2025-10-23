@@ -12,9 +12,14 @@
       <ul class="blog__list">
         {% for post in collections.allPosts %}
           <li class="blog__item">
-            <h2 class="post__title">{{ post.title }}</h2>
-            <p class="post__date">{{ post.publishedAt | readableDate }}</p>
-            <p class="post__description">{{ post.description }}</p>
+            <a
+              href="{{ './' + post.slug | url }}"
+              class="post__link"
+            >
+              <h2 class="post__title">{{ post.title }}</h2>
+              <p class="post__date">{{ post.publishedAt | readableDate }}</p>
+              <p class="post__description">{{ post.description }}</p>
+            </a>
           </li>
         {% endfor %}
       </ul>
