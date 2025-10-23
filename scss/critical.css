@@ -480,6 +480,11 @@ header .container {
   flex-direction: column;
   gap: var(--spacing-300);
 }
+.latest-posts__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
 .latest-posts__blog-link {
   font-size: 18px;
   font-family: "DM Sans", sans-serif;
