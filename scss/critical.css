@@ -270,6 +270,11 @@ a {
   display: flex;
 }
 
+.divider__line {
+  height: 1px;
+  background-color: var(--colors-neutral-200);
+}
+
 @media (min-width: 48rem) {
   .navbar .main-nav {
     visibility: visible;
