@@ -1,7 +1,15 @@
 import path from "node:path";
 import * as sass from "sass";
+import { DateTime } from "luxon";
 
 export default function (config) {
+  // add date filter
+  config.addFilter("readableDate", (dateObj) => {
+    return DateTime.fromISO(dateObj, { zone: "utc" }).toLocaleString(
+      DateTime.DATE_FULL,
+    );
+  });
+
   // add SCSS template format
   config.addTemplateFormats("scss");
 
