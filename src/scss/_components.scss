@@ -24,6 +24,27 @@
   }
 }
 
+.nav-toggle {
+  background: transparent;
+  border: none;
+  border-radius: var(--spacing-125);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-125);
+
+  .hamburger,
+  .close {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & .close {
+    @include mixins.visually-hidden;
+  }
+}
+
 .navbar {
   align-items: center;
   background-color: var(--colors-base-white);
@@ -46,6 +67,9 @@
   }
 
   &:has(.main-nav.visible) {
+    & .nav-toggle {
+      background-color: var(--colors-neutral-700);
+    }
     & .nav-toggle .close {
       @include mixins.visually-visible;
     }
@@ -136,19 +160,6 @@
     border-radius: var(--corner-radius-10);
     max-height: 2.5rem;
     max-width: 2.5rem;
-  }
-}
-
-.nav-toggle {
-  background: transparent;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-
-  & .close {
-    @include mixins.visually-hidden;
   }
 }
 
