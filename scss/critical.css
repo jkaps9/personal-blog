@@ -158,25 +158,53 @@ a {
   box-shadow: 0 0 0 2px var(--colors-base-white), 0 0 0 4px var(--colors-blue-800);
 }
 
-.navbar {
-  color: var(--colors-neutral-600);
-  background-color: var(--colors-base-white);
-  padding: var(--spacing-075);
+.nav-toggle {
+  background: transparent;
+  border: none;
+  border-radius: var(--spacing-125);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  padding: var(--spacing-125);
+}
+.nav-toggle .hamburger,
+.nav-toggle .close {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-toggle .close {
+  visibility: hidden;
+  height: 0;
+  position: absolute;
+}
+
+.navbar {
+  align-items: center;
+  background-color: var(--colors-base-white);
+  border: 1px solid var(--colors-neutral-200);
+  border-radius: var(--corner-radius-10);
+  box-shadow: 0 6px 10px 0 rgba(123, 123, 123, 0.03);
+  color: var(--colors-neutral-600);
+  display: flex;
   gap: var(--spacing-250);
+  justify-content: space-between;
+  padding: var(--spacing-075);
   z-index: 1000;
 }
 .navbar .main-nav {
   visibility: hidden;
   height: 0;
   position: absolute;
+  z-index: inherit;
 }
 .navbar .main-nav.visible {
   visibility: visible;
   height: auto;
   position: static;
+}
+.navbar:has(.main-nav.visible) .nav-toggle {
+  background-color: var(--colors-neutral-700);
 }
 .navbar:has(.main-nav.visible) .nav-toggle .close {
   visibility: visible;
@@ -221,6 +249,43 @@ a {
   text-decoration: none;
   color: inherit;
 }
+.navbar:has(.main-nav.visible) .nav__list {
+  background-color: var(--colors-neutral-0);
+  border: 1px solid var(--colors-neutral-200);
+  border-radius: var(--corner-radius-10);
+  box-shadow: 0 8px 15px 0 rgba(8, 6, 25, 0.06);
+  flex-direction: column;
+  gap: var(--spacing-075);
+  left: 0;
+  padding: var(--spacing-150);
+  position: absolute;
+  right: 0;
+  top: calc(100% + var(--spacing-150));
+}
+.navbar:has(.main-nav.visible) .nav__item {
+  font-size: 18px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--colors-neutral-200);
+  padding-bottom: var(--spacing-075);
+}
+.navbar:has(.main-nav.visible) .nav__item.active {
+  font-size: 18px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 1.5;
+  color: var(--colors-neutral-900);
+}
+.navbar:has(.main-nav.visible) .nav__item.active::after {
+  width: 0;
+}
+.navbar:has(.main-nav.visible) .nav__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
 .navbar__toggle-buttons {
   display: flex;
   align-items: center;
@@ -233,20 +298,6 @@ a {
   border-radius: var(--corner-radius-10);
   max-height: 2.5rem;
   max-width: 2.5rem;
-}
-
-.nav-toggle {
-  background: transparent;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-.nav-toggle .close {
-  visibility: hidden;
-  height: 0;
-  position: absolute;
 }
 
 .theme-toggle {
@@ -277,6 +328,18 @@ a {
 .divider__line {
   height: 1px;
   background-color: var(--colors-neutral-200);
+}
+
+.social-links__item {
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+  background-color: var(--colors-neutral-0);
+  border-radius: var(--corner-radius-10);
+  border: 1px solid var(--colors-neutral-200);
+}
+.social-links__item:hover {
+  background-color: var(--colors-neutral-200);
+  border-color: var(--colors-neutral-300);
 }
 
 @media (min-width: 48rem) {
@@ -408,12 +471,7 @@ section > .container {
 }
 
 header .container {
-  background-color: var(--colors-neutral-0);
-  border-radius: var(--corner-radius-10);
-  border: 1px solid var(--colors-neutral-200);
-  box-shadow: 0 6px 10px 0 rgba(123, 123, 123, 0.03);
   padding: 0;
-  overflow: hidden;
 }
 
 .page-title {
@@ -433,18 +491,6 @@ header .container {
   height: 8px;
   background: var(--colors-blue-500);
   z-index: -1;
-}
-
-.social-links__item {
-  min-height: 2.5rem;
-  min-width: 2.5rem;
-  background-color: var(--colors-neutral-0);
-  border-radius: var(--corner-radius-10);
-  border: 1px solid var(--colors-neutral-200);
-}
-.social-links__item:hover {
-  background-color: var(--colors-neutral-200);
-  border-color: var(--colors-neutral-300);
 }
 
 .hero__container {
@@ -605,6 +651,9 @@ body.dark section > .container {
 }
 body.dark .divider__line {
   background-color: var(--colors-neutral-700);
+}
+body.dark header {
+  position: relative;
 }
 body.dark header .container {
   border-color: var(--colors-neutral-700);
