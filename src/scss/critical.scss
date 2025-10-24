@@ -91,6 +91,10 @@ p {
   color: var(--colors-neutral-600);
 }
 
+strong {
+  @include mixins.text-preset-7-semibold;
+}
+
 .container {
   margin: 0 auto;
   max-width: var(--container-max-width);
@@ -234,6 +238,26 @@ header {
     &__date {
       @include mixins.text-preset-8-italic;
     }
+  }
+}
+
+.about {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-300);
+  }
+
+  .favorites-books {
+    &__list {
+      list-style: disc;
+      padding-left: var(--spacing-400);
+    }
+  }
+
+  &__image {
+    border-radius: var(--corner-radius-6);
   }
 }
 
