@@ -131,28 +131,28 @@ header {
   }
 }
 
+.page-title {
+  @include mixins.text-preset-2;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--colors-blue-500);
+    z-index: -1;
+  }
+}
+
 .hero {
   &__container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-300);
-  }
-
-  &__title {
-    @include mixins.text-preset-2;
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 4px;
-      left: 0;
-      width: 100%;
-      height: 8px;
-      background: var(--colors-blue-500);
-      z-index: -1;
-    }
   }
 
   .social-links__item {
