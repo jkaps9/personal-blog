@@ -408,13 +408,7 @@ header .container {
   overflow: hidden;
 }
 
-.hero__container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-300);
-}
-.hero__title {
+.page-title {
   font-size: 32px;
   font-family: "DM Sans", sans-serif;
   font-weight: 800;
@@ -422,7 +416,7 @@ header .container {
   line-height: 1.3;
   position: relative;
 }
-.hero__title::after {
+.page-title::after {
   content: "";
   position: absolute;
   bottom: 4px;
@@ -431,6 +425,13 @@ header .container {
   height: 8px;
   background: var(--colors-blue-500);
   z-index: -1;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-300);
 }
 .hero .social-links__item {
   min-height: 2.5rem;
