@@ -150,6 +150,19 @@
   }
 }
 
+.social-links__item {
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+  background-color: var(--colors-neutral-0);
+  border-radius: var(--corner-radius-10);
+  border: 1px solid var(--colors-neutral-200);
+
+  &:hover {
+    background-color: var(--colors-neutral-200);
+    border-color: var(--colors-neutral-300);
+  }
+}
+
 @media (min-width: 48rem) {
   .navbar {
     .main-nav {
