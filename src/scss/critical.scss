@@ -126,12 +126,7 @@ section {
 
 header {
   .container {
-    background-color: var(--colors-neutral-0);
-    border-radius: var(--corner-radius-10);
-    border: 1px solid var(--colors-neutral-200);
-    box-shadow: 0 6px 10px 0 rgba(123, 123, 123, 0.03);
     padding: 0;
-    overflow: hidden;
   }
 }
 
@@ -327,6 +322,7 @@ body.dark {
   }
 
   header {
+    position: relative;
     .container {
       border-color: var(--colors-neutral-700);
     }
