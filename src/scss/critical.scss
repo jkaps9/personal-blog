@@ -72,9 +72,9 @@
 body {
   line-height: 1.6em;
   font-family: "DM Sans", sans-serif;
-
-  padding: clamp(var(--spacing-200), 0.7615rem + 1.0178vw, var(--spacing-250)) 0;
   background-color: var(--colors-neutral-100);
+  min-height: 100vh;
+  display: grid;
 }
 
 h1,
@@ -125,6 +125,11 @@ section {
 }
 
 header {
+  margin-top: clamp(
+    var(--spacing-200),
+    0.7615rem + 1.0178vw,
+    var(--spacing-250)
+  );
   .container {
     padding: 0;
   }
