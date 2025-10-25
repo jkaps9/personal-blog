@@ -22,11 +22,12 @@
         id="newsletter"
         name="newsletter"
         method="POST"
-        class="newsletter-form"
+        class="newsletter__form"
       >
         <div class="form-group">
           <label for="email"><p>Email Address</p></label>
           <input
+            autocomplete="email"
             id="email"
             name="email"
             oninvalid="this.setCustomValidity('Please enter a valid email address')"
@@ -35,7 +36,7 @@
             required
             type="email"
           />
-          <div class="validity-message">
+          <div class="error-message">
             {% include "svgs/icon-error.svg" %}
             <p>Please enter a valid email address.</p>
           </div>
@@ -44,9 +45,12 @@
         <input
           type="submit"
           value="Stay updated"
+          class="submit-button"
         />
+        <p class="unsubscribe-message">
+          Unsubscribe anytime. No spam, I promise 🙂
+        </p>
       </form>
-      <p>Unsubscribe anytime. No spam, I promise 🙂</p>
     </div>
   </section>
 {% endblock %}
