@@ -1,0 +1,52 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter__content">
+        <h1>Newsletter</h1>
+        <p>
+          Want to stay updated on my latest articles, coding tutorials, and
+          personal adventures? Sign up for my newsletter! It's a simple way to
+          keep track of new posts and occasional coding tips I discover. Just
+          drop your email in the sign-up box, and I'll send you updates whenever
+          there's something new to share.
+        </p>
+        <p>
+          <strong>
+            I'd love to have you along for the ride and also hear about your own
+            journey!
+          </strong>
+        </p>
+      </div>
+      <form
+        id="newsletter"
+        name="newsletter"
+        method="POST"
+        class="newsletter-form"
+      >
+        <div class="form-group">
+          <label for="email"><p>Email Address</p></label>
+          <input
+            id="email"
+            name="email"
+            oninvalid="this.setCustomValidity('Please enter a valid email address')"
+            oninput="this.setCustomValidity('')"
+            placeholder="email@example.com"
+            required
+            type="email"
+          />
+          <div class="validity-message">
+            {% include "svgs/icon-error.svg" %}
+            <p>Please enter a valid email address.</p>
+          </div>
+        </div>
+
+        <input
+          type="submit"
+          value="Stay updated"
+        />
+      </form>
+      <p>Unsubscribe anytime. No spam, I promise 🙂</p>
+    </div>
+  </section>
+{% endblock %}
