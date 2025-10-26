@@ -305,7 +305,7 @@ header {
     }
 
     .error-message p {
-      @include mixins.text-preset-8;
+      color: var(--colors-red-600);
     }
 
     .success-message p {
@@ -331,6 +331,13 @@ header {
         box-shadow:
           0 0 0 2px var(--colors-neutral-100),
           0 0 0 4px var(--colors-blue-800);
+      }
+
+      &:user-invalid {
+        border: 1px solid var(--colors-red-600);
+        & ~ .error-message {
+          @include mixins.visually-visible;
+        }
       }
     }
 
