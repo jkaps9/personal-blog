@@ -620,6 +620,7 @@ header .container {
   gap: var(--spacing-200);
 }
 .newsletter__form .form-group {
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-075);
@@ -634,18 +635,34 @@ header .container {
   letter-spacing: -0.2px;
   line-height: 1.5;
 }
-.newsletter__form .error-message {
+.newsletter__form .error-message,
+.newsletter__form .success-message {
+  visibility: hidden;
+  height: 0;
+  position: absolute;
   display: flex;
   align-items: center;
   gap: var(--spacing-100);
 }
-.newsletter__form .error-message p {
+.newsletter__form .error-message p,
+.newsletter__form .success-message p {
   font-size: 1rem;
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
   letter-spacing: -0.2px;
   line-height: 1.5;
+}
+.newsletter__form .error-message.active,
+.newsletter__form .success-message.active {
+  visibility: visible;
+  height: auto;
+  position: static;
+}
+.newsletter__form .error-message p {
   color: var(--colors-red-600);
+}
+.newsletter__form .success-message p {
+  color: var(--colors-green-700);
 }
 .newsletter__form input[type=email] {
   font-size: 18px;
@@ -653,10 +670,29 @@ header .container {
   font-weight: 400;
   letter-spacing: -0.2px;
   line-height: 1.5;
+  align-self: stretch;
   border: 1px solid var(--colors-neutral-300);
   border-radius: var(--corner-radius-10);
   background: var(--colors-neutral-0);
+  cursor: pointer;
   padding: var(--spacing-150) var(--spacing-200);
+}
+.newsletter__form input[type=email]:hover {
+  background: var(--colors-neutral-200);
+}
+.newsletter__form input[type=email]:focus, .newsletter__form input[type=email]:active {
+  outline: none;
+  background: var(--colors-neutral-100);
+  border-radius: var(--corner-radius-8);
+  box-shadow: 0 0 0 2px var(--colors-neutral-100), 0 0 0 4px var(--colors-blue-800);
+}
+.newsletter__form input[type=email]:user-invalid {
+  border: 1px solid var(--colors-red-600);
+}
+.newsletter__form input[type=email]:user-invalid ~ .error-message {
+  visibility: visible;
+  height: auto;
+  position: static;
 }
 .newsletter__form .submit-button {
   font-size: 18px;
@@ -667,7 +703,15 @@ header .container {
   border: none;
   border-radius: var(--corner-radius-10);
   background: var(--colors-blue-500);
+  cursor: pointer;
   padding: var(--spacing-150) var(--spacing-300);
+}
+.newsletter__form .submit-button:hover {
+  background: var(--colors-blue-700);
+}
+.newsletter__form .submit-button:focus, .newsletter__form .submit-button:active {
+  border-radius: var(--corner-radius-8);
+  box-shadow: 0 0 0 2px var(--colors-base-white), 0 0 0 4px var(--colors-blue-800);
 }
 
 footer {
