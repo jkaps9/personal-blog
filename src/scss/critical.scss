@@ -230,6 +230,37 @@ header {
   }
 }
 
+.blog {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-300);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-075);
+  }
+
+  &__title {
+    @include mixins.text-preset-2;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: calc(0.3em - 2px);
+      right: calc(-1 * (var(--spacing-125) + 40px));
+      height: 3px;
+      width: 40px;
+      background-color: var(--colors-blue-500);
+    }
+  }
+}
+
 .about {
   .container {
     display: flex;
