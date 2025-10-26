@@ -318,7 +318,20 @@ header {
       border: 1px solid var(--colors-neutral-300);
       border-radius: var(--corner-radius-10);
       background: var(--colors-neutral-0);
+      cursor: pointer;
       padding: var(--spacing-150) var(--spacing-200);
+      &:hover {
+        background: var(--colors-neutral-200);
+      }
+      &:focus,
+      &:active {
+        outline: none;
+        background: var(--colors-neutral-100);
+        border-radius: var(--corner-radius-8);
+        box-shadow:
+          0 0 0 2px var(--colors-neutral-100),
+          0 0 0 4px var(--colors-blue-800);
+      }
     }
 
     .submit-button {
@@ -326,7 +339,18 @@ header {
       border: none;
       border-radius: var(--corner-radius-10);
       background: var(--colors-blue-500);
+      cursor: pointer;
       padding: var(--spacing-150) var(--spacing-300);
+      &:hover {
+        background: var(--colors-blue-700);
+      }
+      &:focus,
+      &:active {
+        border-radius: var(--corner-radius-8);
+        box-shadow:
+          0 0 0 2px var(--colors-base-white),
+          0 0 0 4px var(--colors-blue-800);
+      }
     }
   }
 }
