@@ -291,6 +291,7 @@ header {
     }
 
     .error-message {
+      @include mixins.visually-hidden;
       display: flex;
       align-items: center;
       gap: var(--spacing-100);
@@ -298,6 +299,10 @@ header {
       p {
         @include mixins.text-preset-8;
         color: var(--colors-red-600);
+      }
+
+      &.active {
+        @include mixins.visually-visible;
       }
     }
 
