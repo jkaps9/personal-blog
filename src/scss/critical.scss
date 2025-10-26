@@ -275,6 +275,7 @@ header {
     gap: var(--spacing-200);
 
     .form-group {
+      align-self: stretch;
       display: flex;
       flex-direction: column;
 
@@ -302,6 +303,7 @@ header {
 
     input[type="email"] {
       @include mixins.text-preset-7;
+      align-self: stretch;
       border: 1px solid var(--colors-neutral-300);
       border-radius: var(--corner-radius-10);
       background: var(--colors-neutral-0);
