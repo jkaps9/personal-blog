@@ -1,14 +1,6 @@
 import path from "node:path";
 import * as sass from "sass";
 import { DateTime } from "luxon";
-import posts from "./src/_data/posts.json" with { type: "json" };
-import markdownIt from "markdown-it";
-
-const md = markdownIt({
-  html: true,
-  breaks: true,
-  linkify: true,
-});
 
 export default function (config) {
   // add SCSS template format
@@ -18,7 +10,7 @@ export default function (config) {
 
   // Set directories to pass through to the dist folder
   config.addPassthroughCopy("./src/assets");
-  //config.addPassthroughCopy("./src/admin"); // Needed for DecapCMS
+  config.addPassthroughCopy("./src/admin"); // Needed for DecapCMS
 
   // Configure SCSS files
   config.addExtension("scss", {
@@ -51,33 +43,26 @@ export default function (config) {
 
   // add date filter
   config.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromISO(dateObj, { zone: "utc" }).toLocaleString(
-      DateTime.DATE_FULL,
-    );
-  });
-
-  // add markdown filter
-  config.addFilter("markdown", function (content) {
-    return md.render(content);
+    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_FULL);
   });
 
   // create a posts collection
 
   config.addCollection("posts", function (collection) {
     return collection.getFilteredByGlob("src/posts/**/*.md").sort((a, b) => {
-      return DateTime.fromISO(b.date) - DateTime.fromISO(a.date);
+      return DateTime.fromJSDate(b.date) - DateTime.fromJSDate(a.date);
     });
   });
 
   config.addCollection("latestPosts", function (collection) {
     return collection
       .getFilteredByGlob("src/posts/**/*.md")
-      .sort((a, b) => DateTime.fromISO(b.date) - DateTime.fromISO(a.date))
+      .sort((a, b) => DateTime.fromJSDate(b.date) - DateTime.fromJSDate(a.date))
       .slice(0, 5);
   });
 
   return {
-    pathPrefix: "/personal-blog/",
+    pathPrefix: process.env.NODE_ENV === "production" ? "/personal-blog/" : "/",
     markdownTemplateEngine: "njk",
     dataTemplateEngine: "njk",
     htmlTemplateEngine: "njk",

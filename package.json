@@ -6,6 +6,7 @@
   "scripts": {
     "build-ghpages": "npx @11ty/eleventy --pathprefix=/personal-blog/",
     "start": "npx eleventy --serve",
+    "blog": "npx decap-server",
     "lint": "prettier --write ."
   },
   "repository": {
@@ -22,7 +23,8 @@
   "homepage": "https://github.com/jkaps9/personal-blog#readme",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "@11ty/eleventy-img": "^6.0.4"
+    "@11ty/eleventy-img": "^6.0.4",
+    "decap-cms-app": "^3.8.4"
   },
   "devDependencies": {
     "prettier-plugin-jinja-template": "^2.1.0",
