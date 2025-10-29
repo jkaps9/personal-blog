@@ -4,7 +4,7 @@
     <div class="container">
       <h1 class="post__title">{{ title }}</h1>
       <p class="post__date">Published {{ publishedAt | readableDate }}</p>
-      <div class="post__content">{{ content }}</div>
+      <div class="post__content">{{ content | safe }}</div>
     </div>
   </section>
 {% endblock %}
