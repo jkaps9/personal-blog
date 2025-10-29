@@ -25,7 +25,7 @@
       <ul class="latest-posts__list">
         {% for post in collections.latestPosts %}
           <li class="latest-posts__item">
-            <a href="{{ './posts/' + post.data.slug | url }}">
+            <a href="{{ post.url | url }}">
               <h2 class="post__title">{{ post.data.title }}</h2>
             </a>
             <p class="post__date">{{ post.data.publishedAt | readableDate }}</p>
