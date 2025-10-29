@@ -10,7 +10,7 @@
         </p>
       </div>
       <ul class="blog__list">
-        {% for post in collections.allPosts %}
+        {% for post in collections.posts %}
           <li class="blog__item">
             <a
               href="{{ './' + post.slug | url }}"

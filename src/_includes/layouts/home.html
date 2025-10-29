@@ -26,9 +26,9 @@
         {% for post in collections.latestPosts %}
           <li class="latest-posts__item">
             <a href="{{ './blog/' + post.slug | url }}">
-              <h2 class="post__title">{{ post.title }}</h2>
+              <h2 class="post__title">{{ post.data.title }}</h2>
             </a>
-            <p class="post__date">{{ post.publishedAt | readableDate }}</p>
+            <p class="post__date">{{ post.data.publishedAt | readableDate }}</p>
           </li>
         {% endfor %}
       </ul>
