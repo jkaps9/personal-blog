@@ -63,14 +63,15 @@ export default function (config) {
 
   // create a posts collection
 
-  config.addCollection("allPosts", function (collectionApi) {
-    return posts.sort((a, b) => {
+  config.addCollection("posts", function (collection) {
+    return collection.getFilteredByGlob("src/posts/**/*.md").sort((a, b) => {
       return DateTime.fromISO(b.date) - DateTime.fromISO(a.date);
     });
   });
 
-  config.addCollection("latestPosts", function (collectionApi) {
-    return posts
+  config.addCollection("latestPosts", function (collection) {
+    return collection
+      .getFilteredByGlob("src/posts/**/*.md")
       .sort((a, b) => DateTime.fromISO(b.date) - DateTime.fromISO(a.date))
       .slice(0, 5);
   });
