@@ -5,7 +5,9 @@ slug: balancing-hobbies-and-coding
 description: Thoughts on maintaining energy and focus through outdoor activities
   and exercise.
 publishedAt: 2025-02-18T00:00:00.000-05:00
-body: "Today I want to talk about how I juggle my love for hiking and rock
+layout: "layouts/blog-post.html"
+---
+"Today I want to talk about how I juggle my love for hiking and rock
   climbing with my growing passion for coding. It's easy to get so deep into
   front-end development that we forget to step away from our screens. But for
   me, embracing outdoor adventures has been crucial in keeping my mind fresh and

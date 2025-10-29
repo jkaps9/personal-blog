@@ -2,11 +2,9 @@
 {% block content %}
   <section class="blog-post">
     <div class="container">
-      <h1 class="post__title">{{ post.data.title }}</h1>
-      <p class="post__date">
-        Published {{ post.data.publishedAt | readableDate }}
-      </p>
-      <div class="post__content">{{ post.data.body }}</div>
+      <h1 class="post__title">{{ title }}</h1>
+      <p class="post__date">Published {{ publishedAt | readableDate }}</p>
+      <div class="post__content">{{ content }}</div>
     </div>
   </section>
 {% endblock %}

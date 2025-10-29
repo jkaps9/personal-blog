@@ -13,7 +13,7 @@
         {% for post in collections.posts %}
           <li class="blog__item">
             <a
-              href="{{ './' + post.slug | url }}"
+              href="{{ '/posts/' + post.data.slug | url }}"
               class="post__link"
             >
               <h2 class="post__title">{{ post.data.title }}</h2>
